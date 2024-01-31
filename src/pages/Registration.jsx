@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DropDown from '../components/DropDown'
 
 const Registration = () => {
+    const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: ""
+    })
+
+
+    const  handleChange = (e) => {
+        
+    }
     return (
         <>
             <div className="flex flex-col items-center justify-center h-screen dark min-h-[100vh] bg-[#9F9F9F]">
@@ -13,38 +24,31 @@ const Registration = () => {
                             type="text"
                             className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] mr-[2%]"
                             placeholder="First Name"
+                            value={formData.firstName}
+                            name="firstName"
+                            onChange={(e)=> handleChange(e)}
                         />
                         <input
                             type="text"
                             className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] ml-[2%]"
                             placeholder="Last Name"
+                            value={formData.lastName}
+                            name="lastName"
                         />
                         <input
                             type="email"
                             className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] mr-[2%]"
                             placeholder="Email"
+                            value={formData.email}
+                            name="email"
                         />
                         <input
-                            type="text"
+                            type="password"
                             className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] ml-[2%]"
-                            placeholder="Company Name"
+                            placeholder="Password"
+                            value={formData.password}
+                            name="password"
                         />
-                        <input
-                            type="text"
-                            className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] mr-[2%]"
-                            placeholder="Job Title"
-                        />
-                        <input
-                            type="date"
-                            className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] ml-[2%]"
-                            placeholder="Date of Birth"
-                        />
-                        {/* <DropDown /> */}
-                        <textarea
-                            name="message"
-                            className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-auto md:mb-auto md:w-full md:h-auto md:min-h-[100px] md:max-h-[100px] md:flex-grow md:flex-shrink md:flex-auto focus:bg-gray-md:focus:outline-none:focus:ring-blue-md:focus:border-transparent transition ease-in-out duration-fastest"
-                            placeholder="Message"
-                        ></textarea>
 
                         <button
                             type="submit"
